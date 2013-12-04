@@ -5,7 +5,6 @@ set cindent
 syntax on
 set showmatch
 set smartindent
-set co
 
 map <F9> :call CompileRunGpp()<CR>
 func! CompileRunGpp()
