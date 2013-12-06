@@ -6,6 +6,8 @@ syntax on
 set showmatch
 set smartindent
 
+
+
 map <F9> :call CompileRunGpp()<CR>
 func! CompileRunGpp()
 exec "w"
