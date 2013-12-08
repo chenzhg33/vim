@@ -8,6 +8,7 @@ set smartindent   "智能缩进，也不知道干嘛的
 set nobackup      "不要备份
 set noswapfile    "不要缓存文件
 filetype on	  "检测文件类型
+set tabstop=2     "设置tab为2
 "针对不同的文件采用不同的缩进格式
 filetype indent on
 "允许插件
