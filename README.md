@@ -1,4 +1,4 @@
-<h1>Vim config</h1>
+<h1>.vimrc</h1>
 this is a simple vim config
 <h1>vimConfig.sh</h1>
 this is shell to auto config you vim
