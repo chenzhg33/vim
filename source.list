@@ -1,0 +1,21 @@
+deb http://ftp.sjtu.edu.cn/Ubuntu/ natty main multiverse restricted universe
+
+deb http://ftp.sjtu.edu.cn/Ubuntu/ natty-backports main multiverse restricted universe
+
+deb http://ftp.sjtu.edu.cn/Ubuntu/ natty-proposed main multiverse restricted universe
+
+deb http://ftp.sjtu.edu.cn/Ubuntu/ natty-security main multiverse restricted universe
+
+deb http://ftp.sjtu.edu.cn/Ubuntu/ natty-updates main multiverse restricted universe
+
+deb http://ftp.sjtu.edu.cn/Ubuntu-cn/ natty main multiverse restricted universe
+
+deb-src http://ftp.sjtu.edu.cn/Ubuntu/ natty main multiverse restricted universe
+
+deb-src http://ftp.sjtu.edu.cn/Ubuntu/ natty-backports main multiverse restricted universe
+
+deb-src http://ftp.sjtu.edu.cn/Ubuntu/ natty-proposed main multiverse restricted universe
+
+deb-src http://ftp.sjtu.edu.cn/Ubuntu/ natty-security main multiverse restricted universe
+
+deb-src http://ftp.sjtu.edu.cn/Ubuntu/ natty-updates main multiverse restricted universe
