@@ -19,6 +19,42 @@ void swap(int &a, int &b) {
 	b = a - b;
 	a = a - b;
 }
+int convertToNumber(string str) {
+	int a[9] = {1, 2, 3, 5, 7, 13, 17, 19, 31};
+	int num = 0;
+	for (int i = 0; i < 9; i++)
+		num += (str[i] - '0')*a[i];
+	return num-240;
+}
+class Hash {
+	public:
+		Hash() {
+		}
+		void insert(string str) {
+			int temp = convertToNumber(str);
+			int i = temp;
+			while (array[i++] != 0) {
+				array[i] = temp;
+			}
+		}
+		bool isInHash(string str) {
+			int temp = convertToNumber(str);
+			int i = temp;
+			while (1) {
+				if (array[i] == temp)
+					return true;
+				else if (array[i] == 0)
+					return false;
+				else {
+					i++;
+					i %= 400000;
+				}
+			}
+		}
+	private:
+		int array[400000];
+};
+Hash hash;
 string operation(int flag, string str) {
 	if (flag == 1) {
 		swap(str[0], str[2]);
@@ -49,13 +85,17 @@ void breadth_deep_search() {
 				cout << "It is too hard!" << endl;
 				return;
 			}
+			cout << "----" << temp.count << "----" << endl;
 			que.pop();
 			for (int i = 1; i <= 3; i++) {
 				method temp2;
 				string str_temp = operation(i, temp.str);
+				if (hash.isInHash(str_temp))
+					continue;
 				temp2.str = str_temp;
 				temp2.count = temp.count+1;
 				que.push(temp2);
+				hash.insert(str_temp);
 			}
 		}
 	} else {
@@ -64,25 +104,27 @@ void breadth_deep_search() {
 }
 int main() {
 	int n;
-	//fstream cin("input.txt");
-	cin >> n;
+	fstream fin("input.txt");
+	fin >> n;
 	while (n--) {
 		string str1, str2;
 		for (int i = 0; i < 9; i++) {
 			char ch;
-			cin >> ch;
+			fin >> ch;
 			str1 += ch;
 		}
 		for (int i = 0; i < 9; i++) {
 			char ch;
-			cin >> ch;
+			fin >> ch;
 			str2 += ch;
 		}
+	//	cout << str1 << endl << str2 << endl;
 		start.count = 0;
 		start.str = str1;
 		end.count = 0;
 		end.str = str2;
 		breadth_deep_search();
+		cout << "********************" << endl;
 	}
 	return 0;
 }
